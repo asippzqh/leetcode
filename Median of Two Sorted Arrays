@@ -1,0 +1,21 @@
+class Solution(object):
+    def returnMedian(self,nums):
+        list = []
+        if len(nums)==0:
+            return 0.0
+        elif len(nums)%2==0 and len(nums)!= 0:
+            return (nums[len(nums)/2-1]+nums[len(nums)/2])/2.0
+        else:
+            return nums[(len(nums)-1)/2]
+            
+    def findMedianSortedArrays(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: float
+        """
+        for i in nums2:
+            nums1.append(i)
+        list = sorted(nums1)
+        return self.returnMedian(list)
+        
